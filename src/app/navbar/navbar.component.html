@@ -1,17 +1,18 @@
 <header class="masthead">
-  <h3 class="text-muted">Project name</h3>
+  
 
   <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <h3 class="text-muted">Project name</h3>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse ml-3" id="navbarCollapse">
       <ul class="navbar-nav text-md-center nav-justified w-100">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item" routerLinkActive='active'>
+          <a class="nav-link" routerLink='/inicio'>Inicio <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
+        <li class="nav-item" routerLinkActive='active'>
+          <a class="nav-link" routerLink='/contacto'>Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Services</a>
