@@ -11,13 +11,16 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { DetallesComponent } from './detalles/detalles.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LugaresComponent } from './lugares/lugares.component';
+import { LugaresService } from './Servicios/lugares.service';
 
 const appRoutes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'contacto', component: ContactoComponent},
   {path: 'inicio', component: InicioComponent},
-  {path: '**', component: NotFoundComponent},
-  {path: 'detalles/:id', component: DetallesComponent}
+  {path: 'lugares', component: LugaresComponent},
+  {path: 'detalles/:id', component: DetallesComponent},
+  {path: '**', component: NotFoundComponent} 
 ];
 
 
@@ -29,7 +32,8 @@ const appRoutes: Routes = [
     ContactoComponent,
     DetallesComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LugaresComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ const appRoutes: Routes = [
     }),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
