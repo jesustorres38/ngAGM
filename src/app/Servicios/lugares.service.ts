@@ -17,5 +17,15 @@ export class LugaresService {
   public getLugares(){
     return this.lugares;
   }
+  public buscarLugar(id){
+  // se pone [0] porq filter devuelve un array asi que mandamos array en la posicion 0
+    return this.lugares.filter( x => { return x.id == id })[0];
+    
+}
+  public guardarLugar(lugar){
+    console.log(lugar);
+    lugar.id = Date.now();
+    this.lugares.push(lugar);
+}
 
 }
