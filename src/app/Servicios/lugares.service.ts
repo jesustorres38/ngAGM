@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 @Injectable()
 export class LugaresService {
 
-  lugares:any = [
-    {id: 1, plan: 'pagado', cercania: 1, distancia: 1, active: true, nombre:'Florería la Gardenia'},
-    {id: 2, plan: 'gratuito', cercania: 1, distancia: 1.8, active: true, nombre:'Donas la pasadita'},
-    {id: 3, plan: 'gratuito', cercania: 2, distancia: 5, active: true, nombre:'Veterinaria Huellitas Felices'},
-    {id: 4, plan: 'gratuito', cercania: 3, distancia: 10, active: false, nombre:'Sushi Suhiroll'},
-    {id: 5, plan: 'pagado', cercania: 3, distancia: 35, active: true, nombre:'Hotel la Gracia'},
-    {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre:'Zapatería el Clavo'},
-];
+  public lugares = [];
 
   constructor() { }
 
-  public getLugares(){
-    return this.lugares;
-  }
+ 
   public buscarLugar(id){
   // se pone [0] porq filter devuelve un array asi que mandamos array en la posicion 0
-    return this.lugares.filter( x => { return x.id == id })[0];
+    // return this.lugares.filter( x => { return x.id == id })[0];
     
 }
   public guardarLugar(lugar){
@@ -27,5 +20,17 @@ export class LugaresService {
     lugar.id = Date.now();
     this.lugares.push(lugar);
 }
+
+  public getLugares(){
+    this.lugares = [];
+    firebase.firestore().collection("lugares").get().then(res => {
+      res.forEach(doc => {
+        var lugar = doc.data();
+        lugar.id = doc.id;
+        this.lugares.push(lugar);
+      });
+    });
+    
+  }
 
 }

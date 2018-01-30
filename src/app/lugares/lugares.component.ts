@@ -10,10 +10,10 @@ export class LugaresComponent implements OnInit {
   
   lat: number = 41.3947688;
   lng: number = 2.0787276;
-  lugares = null;
 
   constructor(private servicioLugares: LugaresService) {
-    this.lugares = servicioLugares.getLugares();
+    servicioLugares.getLugares(); 
+    console.log(servicioLugares.lugares);   
    }
 
   ngOnInit() {
