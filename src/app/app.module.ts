@@ -25,6 +25,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Rutas 
 const appRoutes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'contacto', component: ContactoComponent},
@@ -47,9 +48,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDYmfwHtUF-Rf2pYTy4D9LHXnthwLjMupo'
-    }),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyDYmfwHtUF-Rf2pYTy4D9LHXnthwLjMupo'}),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [LugaresService],

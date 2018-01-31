@@ -1,3 +1,8 @@
 .dropdown-menu{
-    min-width: 7rem;
+    min-width: 5rem;
 }
+
+img{  
+    display:flex;
+    margin:0 auto;
+  }

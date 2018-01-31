@@ -1,3 +1,14 @@
 .jumbotron{
     background-color: #FBFCFC;
 }
+
+.btn-red-wine {
+    background-color: #ca1c1c!important;
+    color: #fff!important;
+}
+
+@media (min-width: 576px){
+    .jumbotron {
+        padding: 2rem 2rem;
+    }
+}
