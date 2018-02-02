@@ -2,3 +2,20 @@
 agm-map {
     height: 300px;
 }
+/* PARA MANTENER FOOTER EN EL BOTTOM */
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    padding-bottom: 8rem;
+    min-height: 100%;
+}
+footer {
+    position: absolute;
+    height: 8rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/* ************************************ */
