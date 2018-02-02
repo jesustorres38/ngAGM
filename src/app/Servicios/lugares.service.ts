@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import * as GeoFire from "geofire";
 
 @Injectable()
 export class LugaresService {
@@ -13,12 +14,6 @@ export class LugaresService {
   public buscarLugar(id){
   // se pone [0] porq filter devuelve un array asi que mandamos array en la posicion 0
     // return this.lugares.filter( x => { return x.id == id })[0];
-    
-}
-  public guardarLugar(lugar){
-    console.log(lugar);
-    lugar.id = Date.now();
-    this.lugares.push(lugar);
 }
 
   public getLugares(){
@@ -29,6 +24,7 @@ export class LugaresService {
         lugar.id = doc.id;
         this.lugares.push(lugar);
       });
+      console.log(this.lugares);
     });
     
   }

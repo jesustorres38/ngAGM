@@ -1,5 +1,10 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
+    <agm-marker *ngIf="userLocation" [latitude]="lat" [longitude]="lng">
+        <agm-info-window>
+          <p>This is your position</p>
+        </agm-info-window>
+    </agm-marker>
+  <agm-marker *ngFor="let x of servicioLugares.lugares" [latitude]="x.lat" [longitude]="x.lng"></agm-marker>
 </agm-map>
 
 <section>
@@ -24,6 +29,7 @@
 <div class="row mb-4">
   <!-- TOP 10 LUGARES -->
   <div class="col-lg-4 mb-4">
+    <a routerLink="/Top10/lugares">
       <table class="table">
         <thead class="indigo">
           <tr class="text-white">
@@ -31,13 +37,14 @@
             <th scope="col">Top 10 Lugares</th>
           </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
           <tr>
             <th class="text-center" scope="row">1</th>
             <td>Mark</td>
           </tr>            
-        </tbody>
+        </tbody> -->
       </table>
+    </a>
   </div><!-- col -->
 
   <!-- TOP 10 MUSEOS -->
@@ -49,12 +56,12 @@
             <th scope="col">Top 10 Museos</th>
           </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
           <tr>
             <th scope="row">1</th>
             <td>Mark</td>
           </tr>            
-        </tbody>
+        </tbody> -->
       </table>
   </div><!-- col -->
 
@@ -67,12 +74,12 @@
             <th scope="col">Top 10 Restaurantes</th>
           </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
           <tr>
             <th scope="row">1</th>
             <td>Mark</td>
           </tr>            
-        </tbody>
+        </tbody> -->
       </table>
   </div><!-- col -->
 </div>
